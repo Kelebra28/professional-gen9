@@ -1,0 +1,51 @@
+/* * {
+    background-color: black;
+} */
+
+h1 {
+    /* border: 2px black solid; */
+    width: 400px;
+    display: inline-block;
+    /* margin-left: 350px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 200px; */
+         /*  y      x */
+    /* margin: 100px 50px; */
+    /*      top  right bottom  left  */
+    /* margin: 50px 80px 20px    100px; */
+    /* margin: 50px; */
+    /* text-align: center; */
+}
+
+
+h2 {
+    /* border:  2px red solid; */
+    width: 400px;
+    /* especifica */
+    /* padding-top: 50px;
+    padding-left: ;
+    padding-right: ;
+    padding-bottom: ; */
+        /*     y     x  */
+    /* padding:  50px 100px; */
+
+    /*         top   right bot   left   */
+    /* padding:  50px  200px  0    50px; */
+    /* padding: 50px; */
+}
+
+a {
+    /* border: 2px blue solid; */
+    display: inline-block;
+  
+}
+
+.google {
+    margin-left: 340px;
+    margin-right: 20px;
+}
+
+div {
+    /* border: 2px solid black; */
+}

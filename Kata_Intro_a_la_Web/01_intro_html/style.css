@@ -1,6 +1,10 @@
 
-* {
+/* * {
     background-color: #ea9ffd;
+} */
+
+body {
+    background-color: #ea9ffd ;
 }
 
 h1 {
@@ -11,4 +15,8 @@ h1 {
 
 img {
     width: 300px;
+}
+
+p {
+    color: red;
 }
