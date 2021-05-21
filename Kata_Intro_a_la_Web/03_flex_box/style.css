@@ -1,17 +1,60 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
 .padre {
-    /* border: 2px solid; */
-    height: 800px; 
+    border: 2px solid;
+    height: 50%; 
+    width: 40%;
     display: flex;
     /* hace mis elementos en columna  */
     flex-direction: column;
     /* acomoda los elementos en el eje x  */
-    justify-content: center;
+    justify-content: space-around;
     /* acomoda los elementos en el eje y  */
     align-items: center;
 }
 
 .hijo {
-    /* border: 2px solid blue; */
-    width: 40%;
+    border: 2px solid blue;
+    width: 30%;
     height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.nieto {
+    border: 2px solid red;
+    width: 25%;
+    height: 25%;
+}
+
+.madre {
+    border: 2px solid blueviolet;
+    height: 50%; 
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hija{
+    border: 2px solid rgb(43, 137, 226);
+    height: 30%; 
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nieta {
+    border: 2px solid green;
+    width: 25%;
+    height: 25%;
 }
