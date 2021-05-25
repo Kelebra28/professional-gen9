@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    height: 15vh;
+    width: 100vw;
+    background-color: greenyellow;
+    
+    /* ->>>>> posicion fija
+    position: fixed;
+    left: 40px;
+    top: 50px; */
+
+    position: absolute;
+    top: 0 ;
+    z-index: 2;
+
+    /* ------> posicion relativa */
+    /* position: relative;
+    left: 60px;
+    top: 500px; */
+    /* right: 60px; */
+}
+
+main {
+    /* margin-top: 15vh; */
+    width: 100vw;
+    height: 120vh;
+    background:hotpink;
+    /* posicion absoluta  */
+    position: absolute;
+    top: 0px; 
+    z-index: 1;
+}
+
+h1 {
+    border: 1px solid;
+    height: 40px;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 8;
+}
+
+h2 {
+    border: 1px solid;
+    position: sticky;
+    top: 40px;
+}
+footer {
+    height: 15vh;
+    background: lavender;
+}
