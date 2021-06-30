@@ -10,7 +10,7 @@ var saludo = 'hola'
 var nombre = 'Ricardo'
 var nombre2 = "Raul"
 
-// number
+// number o numerico
 var numero = 10
 var dedos = 20
 var pi = 3.14167981238914891498148412
