@@ -43,3 +43,33 @@ function suma(x = 0,y = 0, z = 0){
 suma(10, 10, 5, 100)
 suma(10, 10)
 suma('10')
+
+
+
+// ----------------------> Objetos literales <------------------------
+
+var persona = {
+    nombre: 'Ricardo',
+    edad: 23
+}
+
+var musica = new Object()
+
+    musica.genero = 'Trap'
+    musica.artista = 'Duki'
+
+
+
+    console.log(persona)
+    console.log(musica)
+
+
+    //   --->>>> Challenge <<----
+
+
+    // (parametro) sacar el area de un cuadrado
+    // (parametro) sacar el area de un rectangulo
+    // (parametro) sacar el area de un triangulo
+    // (parametro) edad, y decir si es mayor de edad o no
+    // (parametro) un numero, decir si es 0, positvo o negatico
+    // (parametro) que diga es es vocal o consonante
