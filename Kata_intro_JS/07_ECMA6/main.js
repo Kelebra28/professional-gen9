@@ -139,4 +139,4 @@ const numberParams = (...params) => {
     return `Recibi ${params.length} parametros`
 }
 
-console.log(numberParams(10, 10, 'cd', 'xd', 'uwu', 'awa'))
+// console.log(numberParams(10, 10, 'cd', 'xd', 'uwu', 'awa'))
