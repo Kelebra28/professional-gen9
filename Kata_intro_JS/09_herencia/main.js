@@ -94,3 +94,4 @@ console.log(lomitoAmsioso.comer())
 //        atributos heredados.
 //     b. Crea el método precioFinal(). Este se calcula
 //        multiplicando el consumoEnergetico por la carga.
+// comentario extra
