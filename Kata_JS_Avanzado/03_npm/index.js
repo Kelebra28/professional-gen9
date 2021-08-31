@@ -1,109 +1,55 @@
+ 
+const request = require('request')
 
-// console.log('----Todo en la pila de ejecucion-----')
-// console.log(1)
-// console.log(2)
-// console.log(3)
-
-
-// console.log('-----El 2 y el 3 van a la cola de ejecucion-----')
-// console.log(1)
-// // callback -> funcion como parametro
-// setTimeout(() => {
-//     return console.log(2)
-// }, 3000)
-
-// setTimeout(() => {
-//     return console.log(3)
-// }, 2000)
-
-// console.log(4)
-
-
-// console.log('------ Simulacion de cuello de botella ---------')
-// console.log(1)
-// setTimeout(() => {
-//     return console.log(2)
-// }, 2000)
-
-// for(let i = 0; i <= 1000000000; i++) {
-//     console.log(i, 'xd')
-// }
-
-// console.log(3)
-
-
-// ----------------- Ejercicios ------------
-// ----1
-const saludo = (imprimir, mensaje) => {
-    imprimir(mensaje)
-}
-// primero parametro es una funcion -> callback
-// saludo((mensaje) => {
-//     console.log(mensaje)
-// } ,'Hola desde un callback') // el segundo parametro es el mensaje
-
-// ----2
-
-const valor = (queTipo, variable) => {
-    queTipo(variable)
-}
-
-// valor((variable) => {
-//     console.log(typeof(variable))
-// }, 1)
-
-// -----3
-
-const imprimirOperacion = (operacion, x, y) => {
-    operacion(x, y)
-}
-// suma
-// imprimirOperacion((x, y) => {
-//     console.log(x + y)
-// }, 10, 50)
-// // resta
-// imprimirOperacion((x, y) => {
-//         console.log(x - y)
-// }, 50, 10)
-// // multiplicacion
-// imprimirOperacion((x, y) => {
-//     console.log(x * y)
-// }, 10, 10)
-// // division
-// imprimirOperacion((x, y) => {
-//     console.log( x / y)
-// }, 100, 20)
-
-// ----4
-
-const caracteres = (convertir, texto, caso) => {
-    convertir(texto, caso)
-}
-
-// caracteres((texto, caso) => {
-//     if(caso === 'minus'){
-//         console.log(texto.toLowerCase())
-//     } else if ( caso === 'mayus') {
-//         console.log(texto.toUpperCase())
-//     }else {
-//         console.log('No es un caso valido')
-//     } // texto    caso
-// }, 'Ricardo XD', 'mayus')
-
-
-// -----5
-
-const devolverHora = (convertir, tiempos) => {
-    convertir(tiempos)
-}
-
-devolverHora((tiempos) => {
-    // map -> for
-    //   tiempo es cada elemento del arreglo
-    tiempos.map((tiempo) => {
-        if( tiempo / 60 >= 2){
-            console.log(tiempo)
+const pedirPokemon = () => {
+    request.get('https://pokeapi.co/api/v2/pokemon/ditto', (error, response, body) => {
+        // console.log(error)
+        // console.log(response)
+        // console.log(body)
+        if(response.statusCode === 200) {
+            const data = JSON.parse(body)
+            // console.log(data)
+            console.log(data.name)
+        } else {
+            console.log(`Ocurrio un error: ${error}`)
         }
     })
-}, [120, 80, 200, 100])
-console.log('Hola nodemon xd')
+}
+
+// pedirPokemon()
+
+
+// 1 crear una funcion que haga una peticion al Poke APi y tome tocomo parametro el numero de un pokemon y que me regrese el nomnbre
+// https://pokeapi.co/api/v2/pokemon/200
+
+
+const pedirPokeParam = (pokemonId) => {
+    request.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`, (err, res, body) => {
+        if (res.statusCode === 200){
+            const data = JSON.parse(body)
+            console.log(data.name)
+        } else if (res.statusCode === 400) {
+            console.log(`No existe ningun pokemon con el Id : ${pokemonId}`)
+        }else {
+            console.log(`Ocurrio un erroe en la peticion: ${err} ` )
+        }
+    })
+ }
+
+//  pedirPokeParam(8000)
+
+const getAuthorbyBookName = (bookName) => {
+    const URL_OPEN_LIBRARY = `http://openlibrary.org/search.json?q=${bookName}`
+    request.get(URL_OPEN_LIBRARY, (err, res, body) => {
+        if(res.statusCode === 200) {
+            const data = JSON.parse(body)
+            data.docs[0].author_name.forEach( author => {
+                    console.log(author)
+            })
+        }else {
+            console.log(`Ocurrio un error : ${err}`)
+        }
+    })
+}
+
+getAuthorbyBookName('i')

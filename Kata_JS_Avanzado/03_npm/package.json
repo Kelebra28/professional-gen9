@@ -10,6 +10,6 @@
   "author": "Ricardo Kelebra",
   "license": "ISC",
   "dependencies": {
-    "requests": "^0.3.0"
+    "request": "^2.88.2"
   }
 }
