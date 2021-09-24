@@ -1,0 +1,11 @@
+.saludo{
+    font-size: 20px;
+    color: blueviolet;
+}
+.nav_container{
+    border: 1px solid;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
