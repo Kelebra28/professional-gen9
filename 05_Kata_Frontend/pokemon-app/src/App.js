@@ -1,4 +1,4 @@
-import PokemonsView from "./PokemonsView/PokemonsView";
+import PokemonsView from './components/PokemonsView/PokemonsView';
 
 function App() {
   return (
