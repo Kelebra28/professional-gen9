@@ -8,13 +8,13 @@ const PokemonsView = () => {
     const URL_BASE = 'https://pokeapi.co/api/v2/pokemon/'
     //   data -> variable para guardar info
     // setData -> funcion que me permite modifcar data
-    const [data, setData] = useState({})
+    const [data, setData] = useState([])
     const [numberPokemon, setNumberPokemon] = useState(1)
     const [error, setError] = useState(false)
 
     const getPokemon = async (id) => {
         try {
-            const response = await axios.get(`${URL_BASE}${id}`)
+            const response = await axios.get(`${URL_BASE}`)
             // console.log(response.data)
             setData(response.data)
             setNumberPokemon(id)
@@ -48,15 +48,27 @@ const PokemonsView = () => {
         getPokemon(numberPokemon)
     }, [numberPokemon])
 
-    // console.log(numberPokemon)
+    useEffect(() => {
+        setData(data)
+    }, [data])
+
+    console.log('esta es mi data', data)
     return(
         <>
         <h1>Vamos a conocer Pokemones</h1>
         <input type="text" name="searchPokemon" id="searchPokemon" onChange={handleChange} />
-        {error === true ? <h3>Este Pokemon no existe</h3> :  <Pokemon name={data.name} id={data.id}  imgPokemon={data.sprites?.front_default} />}
-        { numberPokemon < 899 ?  <button onClick={handleClick}>Pedir Pokemon</button> : null}
+        {data.length === 0 ? null : data.results.map((pokemon, index) => {
+            if(index < 5) {
+                return(
+
+                    <Pokemon key={index} name={pokemon.name} id={pokemon.url} />
+                )
+            }
+        })}
+        {/* {error === true ? <h3>Este Pokemon no existe</h3> :  <Pokemon name={data.name} id={data.id}  imgPokemon={data.sprites?.front_default} />}
+        { numberPokemon < 899 ?  <button onClick={handleClick}>Pedir Pokemon</button> : null} */}
        
-        {numberPokemon > 1 ? <button onClick={reversePokemon}>Regresar pokemon</button> : null}
+        {/* {numberPokemon > 1 ? <button onClick={reversePokemon}>Regresar pokemon</button> : null} */}
         </>
     )
 }
