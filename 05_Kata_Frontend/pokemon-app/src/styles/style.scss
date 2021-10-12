@@ -1,0 +1,17 @@
+@import './atamos/atomos.scss';
+@import './moleculas//moleculas.scss';
+@import './organizmos/organizmos.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+    border: none;
+};
+
+// Medias querys css
+
+// @media screen and (max-width: $tablet-size) {
+//     body {
+//         background-color: pink;
+//     }
+// }

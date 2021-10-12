@@ -1,0 +1,8 @@
+@import './base.scss';
+
+
+.container {
+    width: $size-width;
+    height: $size-heigth;
+    border-color: $color_primary
+}

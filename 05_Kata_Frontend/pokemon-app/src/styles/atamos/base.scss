@@ -1,0 +1,23 @@
+// varibales de un solo valor
+$color_primary:  black;
+$color_secundary: red;
+$size-width: 100px;
+$size-heigth: 50px;
+$tablet-size: 1024px;
+// variables con varios valores
+$cotainer: (
+    ancho: 50px,
+    azul: #3184aa,
+    verder: #35c26b,
+);
+
+// funciones 
+
+@function suma($valor1, $valor2) {
+    @return $valor1 + $valor2
+};
+
+// ejemplo
+.contaier {
+    width: suma(350px, 100px);
+};

@@ -1,4 +1,4 @@
-
+import './Pokemon.scss'
 
 const Pokemon = ({name, id, imgPokemon}) => {
 
