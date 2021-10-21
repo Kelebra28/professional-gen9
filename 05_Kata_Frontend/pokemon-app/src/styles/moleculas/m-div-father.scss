@@ -1,8 +1,10 @@
 @import '../atamos/atomos.scss';
+@import '../atamos/base.scss';
 
 
 .padre{
     border-color: $color_secundary;
     width: $size-width;
     height: $size-heigth;
+    background-color: $color_primary;
 }
