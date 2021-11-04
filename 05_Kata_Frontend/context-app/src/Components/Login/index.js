@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { AppContext } from '../../Aplication'
+import { fetchUserToken } from '../../Services/request'
 
 
 
@@ -16,6 +17,7 @@ const Login =  () => {
             <input placeholder="Password" type="text" onChange={ (e) => {
                 setState({...state, password: e.target.value})
             } } />    
+            <button onClick={() => fetchUserToken()}>Click</button>
         </>
     )
 
